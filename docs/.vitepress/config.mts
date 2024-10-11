@@ -3,10 +3,12 @@ import { nav } from './navbar'
 import sidebar from './sidebar'
 import dayjs from 'dayjs'
 
-import { loadEnv } from 'vitepress'
-const { VITE_BASE_URL } = loadEnv(process.env.NODE_ENV == undefined ? "" : process.env.NODE_ENV, process.cwd())
+import { loadEnv } from 'vite'
+const mode = process.env.NODE_ENV || 'development'
+const { VITE_BASE_URL } = loadEnv(mode, process.cwd())
 
-console.log('VITE_BASE_URL', process.env.NODE_ENV, VITE_BASE_URL)
+console.log('Mode:', process.env.NODE_ENV)
+console.log('VITE_BASE_URL:', VITE_BASE_URL)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -49,7 +51,7 @@ export default defineConfig({
     },
     plugins: [],
     server: {
-      port: 18088
+      port: 18089
     }
   },
   markdown: { // markdown 配置
@@ -71,10 +73,16 @@ export default defineConfig({
           if (isHomePage) {
             return defaultRender.apply(md, args) // 如果是首页，直接渲染内容
           }
-          // 在每个 md 文件内容的开头插入组件
-          const defaultContent = defaultRender.apply(md, args)
-          const component = '<ArticleMetadata />\n'
-          return component + defaultContent
+          // 调用原始渲染
+          let defaultContent = defaultRender.apply(md, args)
+          // 替换内容
+          defaultContent = defaultContent.replace(/NOTE/g, '提醒')
+            .replace(/TIP/g, '建议')
+            .replace(/IMPORTANT/g, '重要')
+            .replace(/WARNING/g, '警告')
+            .replace(/CAUTION/g, '注意')
+          // 返回渲染的内容
+          return defaultContent
         }
       })
     }

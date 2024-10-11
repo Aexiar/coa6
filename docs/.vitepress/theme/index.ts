@@ -5,21 +5,24 @@ import mediumZoom from 'medium-zoom'
 import { onMounted, watch, nextTick, h } from 'vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
 import { useData, useRoute } from 'vitepress'
-import confetti from "./components/confetti.vue"
-import backTop from "./components/backTop.vue"
+import Confetti from "./components/Confetti.vue"
+import BackTop from "./components/BackTop.vue"
 import HomeUnderline from "./components/HomeUnderline.vue"
+// import notice from "./components/Notice.vue"
 import './style/index.css'
 
 export default {
   extends: DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'doc-footer-before': () => h(backTop), // 使用doc-footer-before插槽
+      'doc-footer-before': () => h(BackTop), // 使用doc-footer-before插槽
+      // 'layout-top': () => h(notice), // 使用layout-top插槽
+      'doc-before': () => h(ArticleMetadata), // 使用doc-before插槽
     })
   },
   enhanceApp({ app }) {
     app.component('ArticleMetadata', ArticleMetadata)
-    app.component('confetti', confetti)
+    app.component('confetti', Confetti)
     app.component('HomeUnderline', HomeUnderline)
   },
   setup() {
