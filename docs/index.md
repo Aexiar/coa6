@@ -33,7 +33,7 @@ hero:
       link: "/"  
     - theme: alt
       text: "计组6件套"
-      link: "/notes/"
+      link: '/notes/'
     - theme: alt
       text: "c/c++"
       link: "/c/notes/"
