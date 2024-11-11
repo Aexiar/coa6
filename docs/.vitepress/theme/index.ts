@@ -8,7 +8,6 @@ import { useData, useRoute } from 'vitepress'
 import Confetti from "./components/Confetti.vue"
 import BackTop from "./components/BackTop.vue"
 import HomeUnderline from "./components/HomeUnderline.vue"
-// import notice from "./components/Notice.vue"
 import './style/index.css'
 
 export default {
