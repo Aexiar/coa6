@@ -32,7 +32,6 @@ export default {
     app.component('Confetti', Confetti)
     app.component('HomeUnderline', HomeUnderline)
     app.component('TypeIt', TypeIt)
-    app.component('MouseClick', MouseClick) //鼠标跟随组件
     app.component('xgplayer', xgplayer) //鼠标跟随组件
     app.use(NolebaseInlineLinkPreviewPlugin)
 

@@ -3,7 +3,6 @@ import timeline from "vitepress-markdown-timeline"
 import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from 'vitepress-plugin-group-icons'
 import {figure} from '@mdit/plugin-figure'
 import {loadEnv} from 'vite'
-import {withMermaid} from 'vitepress-plugin-mermaid'
 import Permalink from "vitepress-plugin-permalink"
 import {
   InlineLinkPreviewElementTransform
@@ -18,7 +17,7 @@ const mode = process.env.NODE_ENV || 'development'
 const {VITE_BASE_URL} = loadEnv(mode, process.cwd())
 console.log('Mode:', process.env.NODE_ENV)
 console.log('VITE_BASE_URL:', VITE_BASE_URL)
-const vitePressOptions = withMermaid(defineConfig({
+const vitePressOptions = (defineConfig({
   rewrites: {
     'zh/:rest*': ':rest*'
   },
