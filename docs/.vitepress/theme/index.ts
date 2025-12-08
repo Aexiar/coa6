@@ -21,6 +21,8 @@ import "vitepress-markdown-timeline/dist/theme/index.css"
 import 'virtual:group-icons.css'
 import './style/index.css'
 import xgplayer from "./components/Xgplayer.vue"
+import 'vitepress-plugin-legend/dist/index.css'
+import {initComponent} from "vitepress-plugin-legend/component";
 
 export default {
   extends: DefaultTheme,
@@ -28,11 +30,14 @@ export default {
     return h(SwitchLayout)
   },
   enhanceApp({ app, router }: EnhanceAppContext) {
+
+    initComponent(app);
+
     app.component('ArticleMetadata', ArticleMetadata)
     app.component('Confetti', Confetti)
     app.component('HomeUnderline', HomeUnderline)
     app.component('TypeIt', TypeIt)
-    app.component('xgplayer', xgplayer) //鼠标跟随组件
+    app.component('xgplayer', xgplayer)
     app.use(NolebaseInlineLinkPreviewPlugin)
 
     if (inBrowser) {
