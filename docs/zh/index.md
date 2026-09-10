@@ -1,12 +1,12 @@
 ---
 # 官方文档相关配置：https://vitepress.dev/reference/default-theme-layout
 layout: home # home 是首页，doc 是文档页，page 无样式的文档，自定义页面
+coaHome: true
 home: true
-
 # 官方文档相关配置：https://vitepress.dev/reference/default-theme-home-page
 lang: zh-CN
-title: 许大仙的博客
-titleTemplate: Hi，终于等到你
+title: 计算机基础知识笔记
+titleTemplate: 为知笔记
 editLink: true
 lastUpdated: true
 
@@ -14,38 +14,11 @@ lastUpdated: true
 head: 
   - - meta
     - name: description
-      content: 许大仙前端、Java、大数据、云原生
+      content: 计组 6 件套，系统整理 C 语言、数据结构、计算机组成原理、操作系统、计算机网络与设计模式
   - - meta
     - name: keywords
-      content: 许大仙,许大仙的博客
+      content: 计组 6 件套，C 语言，数据结构，计算机组成原理，操作系统，计算机网络，设计模式
 
-# 网站的居中文案
-hero: 
-  name: "计组6件套"
-  text: "大、全、细"
-  tagline: "欢迎来到我的博客🎉"
-  image:  # text 和 tagline 区域旁的图片
-    src: /logo.svg
-    alt: "许大仙"
-  # 按钮相关
-  actions:
-    - theme: brand
-      text: "🏠首页"
-      link: "/"
-    - theme: alt
-      text: "🎉快速开始"
-      link: "/guide"                        
-# 按钮下方的描述
-features:
-  - icon: 🧠
-    title: "学习思路"
-    details: "学习思路就这么几条：模仿、遍历、分治、动态规划、……"
-  - icon: ✍️
-    title: "学习手法"
-    details: "学习手法就这么几种：缓存、索引、信号/事件、回调/消息循环/dispatcher、……"
-  - icon: 🚨
-    title: "注意事项"
-    details: "注意事项就这么几点：边界值、等价类、数据完整性原子性、死锁、空转、……"
 ---
 
 
