@@ -32,7 +32,7 @@ const paths = [
         <p class="coa-description">从第一行 C 代码，到 CPU、操作系统与网络。<br>系统梳理六门核心课程背后的原理与联系。</p>
         <div class="coa-actions">
           <a class="coa-secondary" :href="withBase('/')"><House :size="17" />首页</a>
-          <a class="coa-primary" :href="withBase(topics[0].link)">开启学习之旅<ArrowRight :size="17" /></a>
+          <a class="coa-primary" :href="withBase('/guide')">开启学习之旅<ArrowRight :size="17" /></a>
         </div>
         <div class="coa-notes"><span>体系清晰</span><span>原理驱动</span><span>持续实践</span></div>
       </div>
